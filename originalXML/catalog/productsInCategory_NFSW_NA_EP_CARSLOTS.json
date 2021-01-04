@@ -1,0 +1,31 @@
+{
+    "ArrayOfProductTrans": {
+        "xmlns": "http://schemas.datacontract.org/2004/07/Victory.DataLayer.Serialization",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance",
+        "ProductTrans": {
+            "BundleItems": {
+                "i:nil": "true"
+            },
+            "CategoryId": {
+                "i:nil": "true"
+            },
+            "Currency": "_NS",
+            "Description": "Adds a car slot",
+            "DurationMinute": "0",
+            "Hash": "-1143680669",
+            "Icon": {},
+            "Level": "0",
+            "LongDescription": "Adds a car slot",
+            "Price": "100.0000",
+            "Priority": "0",
+            "ProductId": "SRV-CARSLOT",
+            "ProductTitle": "CAR SLOT X1",
+            "ProductType": "CARSLOT",
+            "SecondaryIcon": {},
+            "UseCount": "1",
+            "VisualStyle": {},
+            "WebIcon": {},
+            "WebLocation": {}
+        }
+    }
+}
