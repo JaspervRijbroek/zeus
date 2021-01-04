@@ -1,3 +1,9 @@
+export interface IRouteDefinition {
+    method: 'get'|'post';
+    path: string;
+    methodName: string;
+}
+
 export function Controller(): ClassDecorator {
     return (target: any) => {
         // Since routes are set by our methods this should almost never be true (except the controller has no methods)
@@ -7,7 +13,7 @@ export function Controller(): ClassDecorator {
     }
 }
 
-export function Route(method: string, path: string): MethodDecorator {
+export function Route(method: string, path: string, includePrefix: boolean = true): MethodDecorator {
     return (target, propertyKey) => {
         if (! Reflect.hasMetadata('routes', target.constructor)) {
             Reflect.defineMetadata('routes', [], target.constructor);
@@ -17,7 +23,7 @@ export function Route(method: string, path: string): MethodDecorator {
       
         routes.push({
             method,
-            path,
+            path: `${includePrefix ? '/Engine.svc/' : ''}${path}`,
             methodName: propertyKey
         });
         Reflect.defineMetadata('routes', routes, target.constructor);
