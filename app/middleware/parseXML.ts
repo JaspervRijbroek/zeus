@@ -6,7 +6,9 @@ import { writeFileSync } from 'fs';
 import { parse as parseUri } from 'url'
 
 export function parseXMLBody(req: Request, res: Response, next: Function) {
-    if(req.headers['content-type'] && !req.headers['content-type'].includes('text/xml')) {
+    // Check the accepts here.
+    // If there is an explicit mention of xml, then we will serve xml.
+    if(!req.headers['content-type'] || !req.headers['content-type'].includes('text/xml')) {
         return next();
     }
 
